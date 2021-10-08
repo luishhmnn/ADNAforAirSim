@@ -1,0 +1,32 @@
+DNA
+File Format Version 1.0
+
+// Element-ID = [Car No.][System][00-999]
+
+// lane keeping
+1 = 500 (1:3.2 1:4.1)             501 10   // Sensor: DistanceLeftCurb
+2 = 500 (1:3.1 1:4.2)             502 10   // Sensor: DistanceRightCurb
+3 = 1   (1:5.1)                   -   0     // ALU:    Deviation = DistanceRightCurb - DistanceLeftCurb
+4 = 1   (1:5.2)                   +   0     // ALU:    LaneWidth = DistanceLeftCurb + DistanceRightCurb
+5 = 1   (1:6.1)                   /   0     // ALU:    Steering  = Deviation / LaneWidth
+6 = 14  (1:7.1)                   2         // Offset: Add offset to achieve 1..3 range (this allows to detect and ignore 0 output as invalid)
+7 = 600                           301       // Actor:  Set Steering Actor
+
+// throttle
+8 = 70 (1:9.1)                    0.5 10   // Const:      Set gas paddle position
+9 = 600                           302       // Actor:  set engine throttle
+
+// DNA health check
+10 = 998 (1:11.1)                 10       // DNA Checker: Check DNA complete
+11 = 600                          201       // Actor:       Show DNA complete
+
+
+
+
+
+
+
+
+// speed indicator
+//12 = 500 (1:13.1)                  401 100   // Sensor:      Get speed
+//13 = 600                           202       // Actor:       Show speed

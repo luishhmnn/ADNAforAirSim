@@ -8,6 +8,7 @@
 
 # Log files in experiments directory
 experiments/*/*/
+experiments/*/*.exe
 
 tensorflow.dll
 *.csv

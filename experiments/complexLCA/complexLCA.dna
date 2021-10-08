@@ -1,0 +1,47 @@
+DNA
+File Format Version 1.0
+
+
+// --- lane centering assistant (LCA) --------------------------------------------------------------------------------
+6001 = 600                          205                            // Actor: LCA indicator
+//6002 = 600                                                         // Actor: LCA button
+5001 = 500 (1:0015.1 1:9995001.1)               105 10                           // Sensor: LCA button
+5002 = 500 (1:0151.1 1:0011.2 1:9995002.1)      501 10                           // Sensor: Distance left
+5003 = 500 (1:0152.1 1:0012.2 1:9995003.1)      502 10                           // Sensor: Distance left
+5004 = 500 (1:0142.1)               101 10                           // Sensor: Steering wheel
+6003 = 600                          201                               // Actor: Steering wheel
+0701 =  70 (1:0011.1 1:0012.1)        7                            // Constant: Max. distance sensor value
+0011 =   1 (1:0013.1)                 >  0                         // ALU: Distance left valid?
+0012 =   1 (1:0013.2)                 >  0                         // ALU: Distance right valid?
+0151 =  15 (1:0014.2 1:9990151.1)                10                            // Average: Moving average dist. left
+0152 =  15 (1:0014.1 1:9990152.1)                10                            // Average: Moving average dist. right
+0013 =   1 (1:0015.2 1:9990013.1)                 |  0                         // ALU: Distances valid?
+0014 =   1 (1:0101.1 1:9990014.1)                 -  0                         // ALU: Cross Track Error
+0015 =   1 (1:0401.1 1:6001.1 1:0461.2 1:9990015.1)        &  0                         // ALU: Both distances valid?
+//0101 =  10 (1:0141.1 1:9990101.1)              0.19  0.00001  1.1  10  0  0    // PID
+0101 =  10 (1:0141.1 1:9990101.1)              0.14286  0  0.1  10  0  0    // PID
+0141 =  14 (1:0401.3 1:0461.1)                                   2 // Offset: Steering offset
+0142 =  14 (1:0401.2)                                   2 // Offset: Steering offset
+0401 =  40 (1:6004.1 1:9990401.1)                 0                            // Multiplexer: Steering by steering wheel or LCA 
+0461 =  46 (1:6003.1)                             0                // Gate+: Send steering value to steering wheel, if LCA is active.
+6004 = 600                          301                            // Actor: Steering actor
+
+// -- throttle -------------------------------------------------------------------------------------------------------
+0702 = 70 (1:6005.1)                0.5  10                        // Const: Constant gas paddle position
+6005 = 600                          302                            // Actor: Engine throttle
+
+// -- DNA health check -----------------------------------------------------------------------------------------------
+9981 = 998 (1:6006.1)               10                             // DNA Checker: Check DNA complete
+6006 = 600                          202                            // Actor:       Show DNA complete
+
+// -- Logging-------------
+9990015 = 999     // ID 24
+9990101 = 999     // ID 25
+9990401 = 999     // ID 26
+9995002 = 999     // ID 27
+9995003 = 999     // ID 28
+9990151 = 999     // ID 29
+9990152 = 999     // ID 30
+9990014 = 999     // ID 31
+9995001 = 999     // ID 32
+9990013 = 999     // ID 33
