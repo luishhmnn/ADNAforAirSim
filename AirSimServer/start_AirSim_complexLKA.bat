@@ -1,0 +1,1 @@
+start "" "CityEnviron\WindowsNoEditor\CityEnviron.exe" --settings "%~dp0Settings\settings_complexLKA.json"

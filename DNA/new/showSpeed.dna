@@ -1,0 +1,10 @@
+DNA
+File Format Version 1.0
+
+// throttle
+1 = 70  (1:2.1)                   0.3 10   // Const:  throttle = 0.3
+2 = 600                           302      // Actor:  set engine throttle
+
+
+ 3 = 500 (1:4.1) 401 10                 // Sensor:      Get speed from server.
+ 4 = 600         202                    // Actor:       Set speed indicator.

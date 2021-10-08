@@ -1,0 +1,1 @@
+**TODO**: Download the AirSim binaries. You will get a directory named *WindowsNoEditor*. Place this directory here!

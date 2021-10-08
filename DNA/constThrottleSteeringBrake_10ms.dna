@@ -1,0 +1,14 @@
+DNA
+File Format Version 1.0
+
+// throttle
+1 = 70  (1:2.1)                   0.3 10   // Const:  throttle = 0.3
+2 = 600                           510      // Actor:  set engine throttle
+
+// steering
+3 = 70 (1:4.1)                    0.3 10  // Const:  steering = 0.3
+4 = 600                           511      // Actor:  set steering
+
+// brake
+//5 = 70 (1:6.1)                    0.1 10   // Const:  brake = 0.1
+//6 = 600                           513      // Actor:  set brake

@@ -1,0 +1,61 @@
+{
+  "SettingsVersion": 1.2,
+  "SimMode": "Car",
+  "Recording": {
+    "Enabled": true,
+    "Folder": "D:\\AirSimLogs",
+    "RecordInterval": 0.001,
+    "RecordOnMove": true,
+    "Cameras": []
+  },
+  "Vehicles": {
+    "Car": {
+      "VehicleType": "PhysXCar",
+      "AutoCreate": true,
+      "X": -87.5, "Y": -5, "Z": 0,
+      "Yaw": 90, "Pitch": 0, "Roll": 0,
+      "Sensors": {     
+        "501": {
+          "SensorType": 5,
+          "Enabled" : true,
+          "DrawDebugPoints": true,
+          "X": -0.5, "Y": 0, "Z": -0.1,
+          "Yaw": -90, "Pitch": 0, "Roll": 0,
+          "MaxDistance": 10
+        },
+        "502": {
+          "SensorType": 5,
+          "Enabled" : true,
+          "DrawDebugPoints": true,
+          "X": 0, "Y": 0, "Z": -0.1,
+          "Yaw": -90, "Pitch": 0, "Roll": 0,
+          "MaxDistance": 10
+        },
+        "503": {
+          "SensorType": 5,
+          "Enabled" : true,
+          "DrawDebugPoints": true,
+          "X": -0.5, "Y": 0, "Z": -0.1,
+          "Yaw": 90, "Pitch": 0, "Roll": 0,
+          "MaxDistance": 10
+        },
+        "504": {
+          "SensorType": 5,
+          "Enabled" : true,
+          "DrawDebugPoints": true,
+          "X": 0, "Y": 0, "Z": -0.1,
+          "Yaw": 90, "Pitch": 0, "Roll": 0,
+          "MaxDistance": 10
+        }
+      }
+    }
+  },
+  "SubWindows": [
+    {"WindowID": 0, "CameraName": "0", "ImageType": 6, "VehicleName": "Car", "Visible": false},
+    {"WindowID": 1, "CameraName": "0", "ImageType": 7, "VehicleName": "Car", "Visible": false},
+    {"WindowID": 2, "CameraName": "0", "ImageType": 0, "VehicleName": "Car", "Visible": false}
+]
+}
+
+
+
