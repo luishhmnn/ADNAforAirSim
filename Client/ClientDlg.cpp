@@ -292,7 +292,7 @@ void CClientDlg::SetSpeedIndicator(float value)
 {
     // Convert float to string.
     CString floatString;
-    floatString.Format(_T("%.1f"), value);
+    floatString.Format(_T("%.1f"), abs(value));
 
     // Change the text of the text control.
     m_staticSpeed.SetWindowTextW(floatString);
@@ -303,7 +303,7 @@ void CClientDlg::SetReferenceSpeedIndicator(float value)
 {
     // Convert float to string.
     CString floatString;
-    floatString.Format(_T("%.1f"), value);
+    floatString.Format(_T("%.1f"), abs(value));
 
     // Change the text of the text control.
     m_staticReferenceSpeed.SetWindowTextW(floatString);
