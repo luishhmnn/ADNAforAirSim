@@ -1,7 +1,7 @@
 """
 @author: Luis Hohmann
 
-This script runs scenario A of LCA1 100 times.
+This script runs scenario B of LCA3 100 times.
 
 IMPORTANT NOTES:
 - Before you start the script, make sure you start it inside its
@@ -22,7 +22,7 @@ import pyautogui
 
 # 1. Settings --------------------------------------------------------------------------------
 simulations = 100                                      # Number of simulations
-duration = 28                                          # Duration of simulation in sec
+duration = 34                                          # Duration of simulation in sec
 number_of_processors = 3                               # Number of GeneralPurposeProcessors
 log_level = 4                                          # Log level of GeneralPurposeProcessors
 
