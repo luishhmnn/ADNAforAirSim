@@ -82,6 +82,7 @@ void CAirLibWrapper::SetSteering(float steering)
 void CAirLibWrapper::SetThrottle(float throttle)
 {
     if (!m_connected) return;
+    if (throttle < 0.0f) return;
 
     LockMutex();
     m_carControls.throttle = throttle;
