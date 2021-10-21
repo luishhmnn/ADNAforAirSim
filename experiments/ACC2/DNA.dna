@@ -1,0 +1,21 @@
+DNA
+File Format Version 1.0
+
+
+5001 = 500 (1:0461.2 1:0013.1)          104 10  // Sensor: ACC button
+5002 = 500 (1:0461.1 1:0012.2)          401 10  // Sensor: speed
+5003 = 500 (1:0011.1)                   103 10  // Sensor: brake pedal
+5004 = 500 (1:0401.2)                   102 10  // Sensor: gas pedal
+
+0461 =  46 (1:0012.1)                      7    // Gate+: reference speed
+0011 =   1 (1:0013.2)                     ! 0   // ALU: brake released
+0012 =   1 (1:0101.1)                     - 2   // ALU: error
+
+0013 =   1 (1:6001.1 1:0401.1)            & 0   // ALU: ACC activator
+
+0101 =  10 (1:0401.3)                   0.1   0  0  10  0  0 // PID: throttle
+
+0401 =  40 (1:6002.1)                     0        // MUX: multiplexer
+
+6001 = 600                              204
+6002 = 600                              302
