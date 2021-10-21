@@ -243,31 +243,22 @@ float CClientDlg::GetBrake()
 
 float CClientDlg::GetAcc()
 {
-    if (m_ACCactive)
+    // Does the user want to activate ACC?
+    if (m_ACCactivate)
         return 1.0f;
     else
         return 0.0f;
-
-
-    //return m_ACCactive;
 }
 
 
 float CClientDlg::GetLca()
 {
     // Does the user want to activate LCA?
-
     if (m_LCAactivate)
         return 1.0f;
     else
         return 0.0f;
-
-    //if (m_LCAactive)
-    //    return 1.0f;
-    //else
-    //    return 0.0f;
 }
-
 
 
 void CClientDlg::OnAppAbout()
@@ -307,12 +298,29 @@ void CClientDlg::SetSpeedIndicator(float value)
 }
 
 
-void CClientDlg::SetAccIndicator(float value)
+void CClientDlg::SetAcc(float value)
 {
-    //if (value == 0)
-    //    m_staticACC.SetWindowTextW(_T("inactive"));
-    //else
-    //    m_staticACC.SetWindowTextW(_T("active"));
+    if ((value == 0) && (m_ACCactive))
+    {
+        // Deactivate ACC
+        m_ACCactivate = FALSE;
+        m_ACCactive = FALSE;
+        m_btnACC.SetBitmap(LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_ACC_INACTIVE)));
+    }
+    else if ((value == 1) && (!m_ACCactive))
+    {
+        // Activate ACC
+        m_ACCactive = TRUE;
+        m_btnACC.SetBitmap(LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_ACC_ACTIVE)));
+    }
+    else if ((value == 0) && (!m_ACCactive) && m_ACCactivate)
+    {
+        // Reset the activation request of the user, if ACC returns, 
+        // that it cannot be activated. Note: To reset, the button
+        // must have been pressed at least one second ago.
+        if ((std::time(0) - m_ACCactivateTimestamp) > 1)
+            m_ACCactivate = FALSE;
+    }
 }
 
 
@@ -344,12 +352,10 @@ void CClientDlg::SetLca(float value)
 
 void CClientDlg::OnBnClickedButtonAcc()
 {
-    m_ACCactive = !m_ACCactive;
+    m_ACCactivate = !m_ACCactivate;
 
-    if (m_ACCactive)
-        m_btnACC.SetBitmap(LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_ACC_ACTIVE)));
-    else
-        m_btnACC.SetBitmap(LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_ACC_INACTIVE)));
+    if (m_ACCactivate)
+        m_ACCactivateTimestamp = std::time(0);
 }
 
 
@@ -359,13 +365,4 @@ void CClientDlg::OnBnClickedButtonLca()
     
     if (m_LCAactivate)
         m_LCAactivateTimestamp = std::time(0);
-
-
-    //m_LCAactive = !m_LCAactive;
-
-    //if (m_LCAactive)
-    //    m_btnLCA.SetBitmap(LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_LCA_ACTIVE)));
-    //else
-    //    m_btnLCA.SetBitmap(LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_LCA_INACTIVE)));
-
 }

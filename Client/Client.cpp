@@ -172,7 +172,7 @@ static void DNAActorHandler(int resource, int dataSize, void* data)
         theApp.SetSpeedIndicator(*((float*)data));
         break;
     case DNA_CLIENT_RESOURCE_ACTOR_ACC_INDICATOR:
-        theApp.SetAccIndicator(*((float*)data));
+        theApp.SetAcc(*((float*)data));
         break;
     case DNA_CLIENT_RESOURCE_ACTOR_LCA_INDICATOR:
         theApp.SetLca(*((float*)data));
@@ -184,12 +184,7 @@ static void DNAActorHandler(int resource, int dataSize, void* data)
     }
 }
 
-
 // -------------------------------------------------------------------------------------------------
-
-
-
-
 
 // CClientApp
 
@@ -442,9 +437,9 @@ void CClientApp::SetSpeedIndicator(float value)
 }
 
 
-void CClientApp::SetAccIndicator(float value)
+void CClientApp::SetAcc(float value)
 {
-    ((CClientDlg*)m_pMainWnd)->SetAccIndicator(value);
+    ((CClientDlg*)m_pMainWnd)->SetAcc(value);
 }
 
 

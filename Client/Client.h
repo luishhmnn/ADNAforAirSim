@@ -84,7 +84,7 @@ public:
 	void SetSteering(float value);
 	void SetDnaIndicator(float value);
 	void SetSpeedIndicator(float value);
-	void SetAccIndicator(float value);
+	void SetAcc(float value);
 	void SetLca(float value);
 };
 
