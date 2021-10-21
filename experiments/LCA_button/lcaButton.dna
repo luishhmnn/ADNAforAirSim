@@ -1,5 +1,0 @@
-DNA
-File Format Version 1.0
-
-5001 = 500 (1:6001.1)               105     // Sensor: LCA button
-6001 = 600                    204     // Actor: LCA indicator
