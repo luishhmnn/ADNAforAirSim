@@ -60,7 +60,9 @@ public:
 	// Speed indicator
 	CStatic m_staticSpeed;
 	void SetSpeedIndicator(float value);
-
+	// Reference speed indicator
+	CStatic m_staticReferenceSpeed;
+	void SetReferenceSpeedIndicator(float value);
 
 	// ACC button
 	CButton m_btnACC;                ///< ACC button which works as a switch.

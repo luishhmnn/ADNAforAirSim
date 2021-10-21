@@ -177,6 +177,9 @@ static void DNAActorHandler(int resource, int dataSize, void* data)
     case DNA_CLIENT_RESOURCE_ACTOR_LCA_INDICATOR:
         theApp.SetLca(*((float*)data));
         break;
+    case DNA_CLIENT_RESOURCE_ACTOR_REFERENCE_SPEED_INDICATOR:
+        theApp.SetReferenceSpeedIndicator(*((float*)data));
+        break;
     default:
         // TODO: Raise error or print to log file
         OutputDebugStringA("Warning: An actor task tries to access a resource whose ID is not known to the client.\n");
@@ -436,6 +439,10 @@ void CClientApp::SetSpeedIndicator(float value)
     ((CClientDlg*)m_pMainWnd)->SetSpeedIndicator(value);
 }
 
+void CClientApp::SetReferenceSpeedIndicator(float value)
+{
+    ((CClientDlg*)m_pMainWnd)->SetReferenceSpeedIndicator(value);
+}
 
 void CClientApp::SetAcc(float value)
 {

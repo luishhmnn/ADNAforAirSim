@@ -85,6 +85,7 @@ void CClientDlg::DoDataExchange(CDataExchange* pDX)
     DDX_Control(pDX, IDC_BUTTON_ACC, m_btnACC);
     DDX_Control(pDX, IDC_BUTTON_LCA, m_btnLCA);
     DDX_Control(pDX, IDC_STATIC_TXT_SPEED_INDICATOR, m_staticSpeed);
+    DDX_Control(pDX, IDC_STATIC_TXT_REFERENCE_SPEED_INDICATOR, m_staticReferenceSpeed);
 }
 
 BEGIN_MESSAGE_MAP(CClientDlg, CDialogEx)
@@ -295,6 +296,17 @@ void CClientDlg::SetSpeedIndicator(float value)
 
     // Change the text of the text control.
     m_staticSpeed.SetWindowTextW(floatString);
+}
+
+
+void CClientDlg::SetReferenceSpeedIndicator(float value)
+{
+    // Convert float to string.
+    CString floatString;
+    floatString.Format(_T("%.1f"), value);
+
+    // Change the text of the text control.
+    m_staticReferenceSpeed.SetWindowTextW(floatString);
 }
 
 

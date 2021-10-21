@@ -22,34 +22,28 @@
 #define HORMONE_LOOP_PERIOD 10 // hormone loop period in milliseconds
 
 // DNA sensor resources of the client
-#define DNA_CLIENT_RESOURCE_SENSOR_STEERING             101
-#define DNA_CLIENT_RESOURCE_SENSOR_THROTTLE             102
-#define DNA_CLIENT_RESOURCE_SENSOR_BRAKE                103
-#define DNA_CLIENT_RESOURCE_SENSOR_ACC                  104
-#define DNA_CLIENT_RESOURCE_SENSOR_LCA                  105
+#define DNA_CLIENT_RESOURCE_SENSOR_STEERING					101
+#define DNA_CLIENT_RESOURCE_SENSOR_THROTTLE					102
+#define DNA_CLIENT_RESOURCE_SENSOR_BRAKE					103
+#define DNA_CLIENT_RESOURCE_SENSOR_ACC						104
+#define DNA_CLIENT_RESOURCE_SENSOR_LCA						105
 
 // DNA actor resources of the client
-#define DNA_CLIENT_RESOURCE_ACTOR_STEERING				201
-#define DNA_CLIENT_RESOURCE_ACTOR_DNACOMPLETE           202
-#define DNA_CLIENT_RESOURCE_ACTOR_SPEED_INDICATOR       203
-#define DNA_CLIENT_RESOURCE_ACTOR_ACC_INDICATOR         204
-#define DNA_CLIENT_RESOURCE_ACTOR_LCA_INDICATOR         205
+#define DNA_CLIENT_RESOURCE_ACTOR_STEERING		            201
+#define DNA_CLIENT_RESOURCE_ACTOR_DNACOMPLETE	            202
+#define DNA_CLIENT_RESOURCE_ACTOR_SPEED_INDICATOR           203
+#define DNA_CLIENT_RESOURCE_ACTOR_ACC_INDICATOR	            204
+#define DNA_CLIENT_RESOURCE_ACTOR_LCA_INDICATOR	            205
+#define DNA_CLIENT_RESOURCE_ACTOR_REFERENCE_SPEED_INDICATOR 206
 
 // DNA actor resources of the server (car)
-#define DNA_CAR_RESOURCE_ACTOR_STEERING                 301
-#define DNA_CAR_RESOURCE_ACTOR_THROTTLE                 302          
-#define DNA_CAR_RESOURCE_ACTOR_BRAKE                    303
+#define DNA_CAR_RESOURCE_ACTOR_STEERING						301
+#define DNA_CAR_RESOURCE_ACTOR_THROTTLE						302          
+#define DNA_CAR_RESOURCE_ACTOR_BRAKE						303
 
 // DNA sensor resources of the server (car)
 // Car state
-#define DNA_CAR_RESOURCE_SENSOR_SPEED                   401
-
-// Distance sensors
-//#define DNA_CAR_RESOURCE_SENSOR_DISTANCE_LEFT_CURB      501
-//#define DNA_CAR_RESOURCE_SENSOR_DISTANCE_RIGHT_CURB     502
-//#define DNA_CAR_RESOURCE_SENSOR_DISTANCE_LEFT_CURB      503
-//#define DNA_CAR_RESOURCE_SENSOR_DISTANCE_RIGHT_CURB     504
-
+#define DNA_CAR_RESOURCE_SENSOR_SPEED						401
 
 
 // CClientApp:
@@ -84,6 +78,7 @@ public:
 	void SetSteering(float value);
 	void SetDnaIndicator(float value);
 	void SetSpeedIndicator(float value);
+	void SetReferenceSpeedIndicator(float value);
 	void SetAcc(float value);
 	void SetLca(float value);
 };

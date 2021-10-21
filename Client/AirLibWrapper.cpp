@@ -81,11 +81,19 @@ void CAirLibWrapper::SetSteering(float steering)
 
 void CAirLibWrapper::SetThrottle(float throttle)
 {
-    if (!m_connected) return;
-    if (throttle < 0.0f) return;
+    float value;
 
+    // check connection
+    if (!m_connected) return;
+
+    // transform value to range 0-1
+    if (throttle < 0.0f) value = 0.0f;
+    else if (throttle > 1.0f) value = 1.0f;
+    else value = throttle;
+
+    // send value to server
     LockMutex();
-    m_carControls.throttle = throttle;
+    m_carControls.throttle = value;
     m_carRpcLibClient->setCarControls(m_carControls);
     UnlockMutex();
 }

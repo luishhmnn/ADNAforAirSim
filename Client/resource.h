@@ -31,9 +31,14 @@
 #define IDC_BUTTON_ACC                  1013
 #define IDC_BUTTON_LCA                  1014
 #define IDC_STATIC_TXT_ACC              1015
+#define IDC_STATIC_TXT_REFERENCE_SPEED  1015
 #define IDC_STATIC_TXT_ACC_INDICATOR    1016
+#define IDC_STATIC_TXT_SPEED_INDICATOR2 1016
+#define IDC_STATIC_TXT_REFERENCE_SPEED_INDICATOR 1016
 #define IDC_STATIC_TXT_KMH              1017
+#define IDC_STATIC_TXT_M_PER_S          1017
 #define IDC_STATIC_TXT_LCA              1018
+#define IDC_STATIC_TXT_M_PER_S2         1018
 #define IDC_STATIC_TXT_LCA_INDICATOR    1019
 #define ID_HELP_ABOUT                   32771
 #define ID_CONTROL_WAKESYSTEM           32772
