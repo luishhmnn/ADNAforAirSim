@@ -2,13 +2,11 @@
   "SettingsVersion": 1.2,
   "SimMode": "Car",
   "Recording": {
-    "Enabled": false,
-    "Folder": "D:\\projects\\ADNAforAirSim_CNN\\airsim\\testing",
-    "RecordInterval": 0.05,
+    "Enabled": true,
+    "Folder": "D:\\projects\\ADNAforAirSim\\experiments\\7_LCA4_scenarioA\\",
+    "RecordInterval": 0.001,
     "RecordOnMove": false,
-    "Cameras": [
-      { "CameraName": "LaneCamera", "ImageType": 0, "PixelsAsFloat": false,  "VehicleName": "Car", "Compress": true }
-    ]
+    "Cameras": []
   },
   "Vehicles": {
     "Car": {
