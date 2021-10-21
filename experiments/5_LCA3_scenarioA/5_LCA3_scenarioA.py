@@ -1,7 +1,7 @@
 """
 @author: Luis Hohmann
 
-This script runs scenario A of LCA1 100 times.
+This script runs scenario A of LCA3 100 times.
 
 IMPORTANT NOTES:
 - Before you start the script, make sure you start it inside its
