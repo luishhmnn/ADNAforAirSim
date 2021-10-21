@@ -1,0 +1,28 @@
+DNA
+File Format Version 1.0
+
+
+// ACC
+5001 = 500 (1:0011.1 1:0461.1)    505  100   // Sensor:    Distance Front
+
+0711 = 71 (1:0461.2 1:9990711.1)                            1 1 100 1 0 0  // Counter
+0461 = 46 (1:0011.2)                3       // Gate:
+
+0011 = 1                                        -   0   // ALU
+
+
+// steering
+1 = 70 (1:2.1)                    2.0 10    // Const:     Set Steering position
+2 = 600                           301       // Actuator:  Set Steering Actuator
+
+
+3 = 70 (1:4.1)                    0 10    // Const:      Set gas paddle position
+4 = 600                           302     // Actuator:  set engine throttle
+
+// DNA health check
+5 = 998 (1:6.1)                  10        // DNA Checker: Check DNA complete
+6 = 600                          202       // Actuator:       Show DNA complete
+
+
+// LOGGER
+9990711 = 999
