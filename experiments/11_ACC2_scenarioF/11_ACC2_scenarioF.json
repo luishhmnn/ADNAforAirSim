@@ -2,8 +2,8 @@
   "SettingsVersion": 1.2,
   "SimMode": "Car",
   "Recording": {
-    "Enabled": false,
-    "Folder": "D:\\projects\\ADNAforAirSim\\experiments\\9_ACC1_scenarioC",
+    "Enabled": true,
+    "Folder": "D:\\projects\\ADNAforAirSim\\experiments\\11_ACC2_scenarioF",
     "RecordInterval": 0.001,
     "RecordOnMove": false,
     "Cameras": []
@@ -24,6 +24,12 @@
           "MaxDistance": 80
         }
       }
+    },
+    "Car1": {
+      "VehicleType": "PhysXCar",
+      "AutoCreate": true,
+      "X": -105, "Y": -26.5, "Z": 0,
+      "Yaw": 180, "Pitch": 0, "Roll": 0
     }
   }
 }

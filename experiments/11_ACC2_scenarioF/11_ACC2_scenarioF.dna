@@ -1,0 +1,42 @@
+DNA
+File Format Version 1.0
+
+
+5001 = 500 (1:0461.2 1:0013.1)                               104 10  // Sensor: ACC button
+5002 = 500 (1:0461.1 1:0012.2 1:6003.1 1:0014.1)             401 10  // Sensor: speed
+5003 = 500 (1:0011.1 1:0403.2)                               103 10  // Sensor: brake pedal
+5004 = 500 (1:0402.2)                                        102 10  // Sensor: gas pedal
+5005 = 500 (1:0015.1)                                        505
+0701 =  70 (1:0014.2)                                        1.8 10  // Constant
+0702 =  70 (1:0016.2)                                          0 10  // Constant
+
+0704 =  70 (1:0019.2)                                                     10 10
+0461 =  46 (1:0012.1 1:6004.1)                                 7     // Gate+: reference speed
+0462 =  46 (1:0402.3)                                                      0     // Gate+: 
+0011 =   1 (1:0013.2)                                          !  0  // ALU: brake released
+0014 =   1 (1:0019.1)                                          *  0  // ALU: safety distance
+0012 =   1 (1:0101.1)                                          -  2  // ALU: speed error
+0015 =   1 (1:0103.1 1:0016.1)                        -  2  // ALU: distance error
+0013 =   1 (1:6001.1 1:0402.1 1:0017.1)                        &  0  // ALU: ACC activator
+0016 =   1 (1:0018.1 1:0017.2)                                 <  0  // ALU: Distance not safe
+0017 =   1 (1:0403.1)                                          &  0  // ALU: Automated braking?
+
+0018 =   1 (1:0462.2)                                                      !  0
+
+0019 =   1 (1:0015.2)
+0101 =  11 (1:0462.1)                                         0.8   0  0  10  0  0 // PID: throttle
+
+0103 =  10 (1:0403.3)                                         -0.1  0  0  10  0  0 // PID: brake
+
+0402 =  40 (1:6002.1)                                            0   // MUX: Throttle: pedal or ACC?
+0403 =  40 (1:6005.1)                                            0   // MUX: Brake: pedal or ACC?
+
+6001 = 600                              204         // Actuator: ACC button
+6002 = 600                              302         // Actuator: throttle
+6003 = 600                              203         // Actuator: Speed indicator
+6004 = 600                              206         // Actuator: reference speed indicator
+6005 = 600                              303         // Actuator: brake
+
+// steering
+1 = 500 (1:2.1)                   101
+2 = 600                              301
