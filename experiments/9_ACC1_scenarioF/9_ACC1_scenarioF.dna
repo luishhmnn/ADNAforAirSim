@@ -1,30 +1,13 @@
 DNA
 File Format Version 1.0
 
-
 // ACC
-5001 = 500 (1:0011.1)             505  10   // Sensor:    Distance Front
-0701 =  70 (1:0011.2)              20  10   // Constant:  20 m
-0011 =   1 (1:0101.1)               -   0   // ALU
-
-0101 =  10 (1:6001.1 1:6002.1 1:9990101.1)             0.1   0  0  100  0  0   // PID
-
-
-0702 = 70 ()              -0.5 10
-6001 = 600                     302 // Actuator: set engine throttle
-
-6002 = 600                     203 // Speed Indicator: USE THIS FOR ACCELERATION
-
-// steering
-1 = 70 (1:2.1)                    2.0 10    // Const:     Set Steering position
-2 = 600                           301       // Actuator:  Set Steering Actuator
-
-
+5001 = 500 (1:0011.1)             505  10                 // Sensor: distance front
+0701 =  70 (1:0011.2)              20  10                 // Constant: desired distance (20 m)
+0011 =   1 (1:0101.1)               -   0                 // ALU: difference
+0101 =  10 (1:6001.1)             0.1   0  0  100  0  0   // PID: PID controller
+6001 = 600                        302                     // Actuator: throttle
 
 // DNA health check
-5 = 998 (1:6.1)                  10        // DNA Checker: Check DNA complete
-6 = 600                          202       // Actuator:       Show DNA complete
-
-
-// LOGGER
-9990101 = 999
+9981 = 998 (1:6002.1)              10                     // DNA Checker: Check DNA complete
+6002 = 600                        202                     // Actuator: Show DNA complete
