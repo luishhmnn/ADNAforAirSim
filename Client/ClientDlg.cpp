@@ -21,7 +21,7 @@ extern "C" {
 #endif
 
 // constants
-#define DNACOMPLETE_STATIC_TEXT "DNA"
+#define DNACOMPLETE_STATIC_TEXT "ADNA"
 #define DNACOMPLETE_OFF_COLOR RGB(180, 180, 180) // color if DNA is incomplete
 #define DNACOMPLETE_ON_COLOR RGB(0, 150, 0) // color if DNA is complete
 
@@ -301,9 +301,18 @@ void CClientDlg::SetSpeedIndicator(float value)
 
 void CClientDlg::SetReferenceSpeedIndicator(float value)
 {
-    // Convert float to string.
     CString floatString;
-    floatString.Format(_T("%.1f"), abs(value));
+
+    if (value == -1.0f)
+    {
+        // Reset indicator.
+        floatString.Format(_T("-"));
+    }
+    else
+    {
+        // Convert float to string.
+        floatString.Format(_T("%.1f"), abs(value));
+    }
 
     // Change the text of the text control.
     m_staticReferenceSpeed.SetWindowTextW(floatString);
