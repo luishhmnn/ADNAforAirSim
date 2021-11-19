@@ -4,8 +4,8 @@ start "ADNAforAirSim" "..\..\Client\build\x64\Debug\ADNAAirSimClient.exe"
 
 set "DNAPATH=%~dp011_ACC2_scenarioF"
 set "DNAPATH=%DNAPATH:\=\\%"
-start "GPP 1" "GeneralPurposeProcessor.exe" /DNA:%DNAPATH% /L:4 1
-start "GPP 2" "GeneralPurposeProcessor.exe" /DNA:%DNAPATH% /L:4 2
-start "GPP 3" "GeneralPurposeProcessor.exe" /DNA:%DNAPATH% /L:4 3
+start "GPP 1" "11_GeneralPurposeProcessor.exe" /DNA:%DNAPATH% /L:4 1
+start "GPP 2" "11_GeneralPurposeProcessor.exe" /DNA:%DNAPATH% /L:4 2
+start "GPP 3" "11_GeneralPurposeProcessor.exe" /DNA:%DNAPATH% /L:4 3
 
 
