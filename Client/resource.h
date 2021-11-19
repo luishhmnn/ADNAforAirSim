@@ -9,8 +9,6 @@
 #define IDR_MAINFRAME                   128
 #define IDR_MENU                        130
 #define IDI_ICON1                       131
-#define IDB_BITMAP_ACC                  137
-#define IDB_BITMAP_LCA                  138
 #define IDB_BITMAP_ACC_ACTIVE           140
 #define IDB_BITMAP_ACC_INACTIVE         141
 #define IDB_BITMAP_LCA_ACTIVE           142
