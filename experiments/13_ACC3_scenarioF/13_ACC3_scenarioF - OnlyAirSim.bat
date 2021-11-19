@@ -1,0 +1,1 @@
+start "AirSim CityEnviron" "..\..\AirSimServer\CityEnviron\WindowsNoEditor\CityEnviron.exe" --settings "%~dp0\13_ACC3_scenarioF.json"
