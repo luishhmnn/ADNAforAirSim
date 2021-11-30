@@ -1,7 +1,7 @@
 """
 @author: Luis Hohmann
 
-This script runs scenario F of ACC2 100 times.
+This script runs scenario F of ACC1 100 times.
 
 IMPORTANT NOTES:
 - Before you start the script, make sure you start it inside its
@@ -48,7 +48,7 @@ if str(dir_path) != cwd:
 
 for j in range(simulations):
     print(f'Running simulation {j+1} of {simulations}...')
-
+    
     # 3. Starting the executables ----------------------------------------------------------------
     # Run AirSim (CityEnviron.exe)
     run_command_airsim = f"""start "AirSim CityEnviron" "{dir_path}\\..\\..\\AirSimServer\\CityEnviron\\WindowsNoEditor\\CityEnviron.exe" --settings "{airsim_settings_path}" """
@@ -66,32 +66,21 @@ for j in range(simulations):
     os.system(run_command_client)
     time.sleep(3)
 
-    # # 4. ADNAAirSimClient.exe: Establish connection and start the simulation -------------------------------------------
-    # # Open `Control` menu and select `Connect to AirSim`
-    # pyautogui.hotkey('alt', 'C')
-    # pyautogui.press('C')
-    # time.sleep(5)
+    # 4. ADNAAirSimClient.exe: Establish connection and start the simulation -------------------------------------------
+    # Open `Control` menu and select `Connect to AirSim`
+    pyautogui.hotkey('alt', 'C')
+    pyautogui.press('C')
+    time.sleep(5)
 
-    # # Set throttle to 1.0 of host vehicle `Car`
-    # pyautogui.press('tab')
-    # pyautogui.press('end') 
-
-    # # Open `Control` menu and select `Wake System`. The host vehicle starts driving.
-    # pyautogui.hotkey('alt', 'C')
-    # pyautogui.press('W')
-
-    # connect to the AirSim simulator 
-    client = airsim.CarClient()
-    client.confirmConnection()
-    client.enableApiControl(True, "Car")
-
-    car_controls_car = airsim.CarControls()
-    car_controls_car.throttle = 1.0
-    client.setCarControls(car_controls_car, "Car")
+    # Open `Control` menu and select `Wake System`. The host vehicle starts driving.
+    pyautogui.hotkey('alt', 'C')
+    pyautogui.press('W')
 
 
     # 5. Start target vehicle `Car1` -----------------------------------------------------------------------------------
     # connect to the AirSim simulator 
+    client = airsim.CarClient()
+    client.confirmConnection()
     client.enableApiControl(True, "Car1")
 
     # create default car controls
@@ -106,57 +95,16 @@ for j in range(simulations):
     car_controls.throttle = 0.7
     car_controls.steering = 0.0
     client.setCarControls(car_controls, "Car1")
-    time.sleep(3)
+    time.sleep(5)
 
-    # 6. Activate ACC of host vehicle ----------------------------------------------------------------------------------
-    # NOTE: ACC button does is not functional with ACC1. ACC is activated by waking the AHS.
-    client.enableApiControl(False, "Car")
-
-    # Open `Control` menu and select `Connect to AirSim`
-    pyautogui.hotkey('alt', 'C')
-    pyautogui.press('C')
-    time.sleep(2)
-
-
-    # Open `Control` menu and select `Wake System`.
-    pyautogui.hotkey('alt', 'C')
-    pyautogui.press('W')
-
-    # 7. Control target vehicle ----------------------------------------------------------------------------------------
     # slow down
     print("Slow down...")
     car_controls.throttle = 0.6
     car_controls.brake = 0.0
     client.setCarControls(car_controls, "Car1")
-    time.sleep(10)
-
-    # slow down
-    print("Slow down...")
-    car_controls.throttle = 0.3
-    car_controls.brake = 0.0
-    client.setCarControls(car_controls, "Car1")
-    time.sleep(2)
-
-    # standstill
-    print("Standstill...")
-    car_controls.throttle = 0.0
-    car_controls.brake = 0.1
-    client.setCarControls(car_controls, "Car1")
-    time.sleep(4)
-
-    # relase brakes and accelerate again
-    print("Relase brakes and accelerate again...")
-    car_controls.throttle = 0.9
-    car_controls.brake = 0.0
-    client.setCarControls(car_controls, "Car1")
-    time.sleep(15)
-
-    # emergency braking
-    print("Emergency braking...")
-    car_controls.throttle = 0.0
-    car_controls.brake = 1.0
-    client.setCarControls(car_controls, "Car1")
-    time.sleep(7)
+    time.sleep(5)
+    
+    # skip the rest of the simulation because cars crashes anyway...
 
     # 8. Stop simulation -----------------------------------------------------------------------------------------------
 
@@ -164,7 +112,6 @@ for j in range(simulations):
     pyautogui.hotkey('alt', 'C')
     pyautogui.press('S')
     time.sleep(1)
-
     # Disconnect
     pyautogui.hotkey('alt', 'C')
     pyautogui.press('D')
@@ -190,6 +137,5 @@ for j in range(simulations):
         src = os.path.join(dir_path, file_name)
         dest = os.path.join(dir_path, ahs_log_dir_path, file_name)
         os.rename(src, dest)
-
 
 print(f'Done!')
