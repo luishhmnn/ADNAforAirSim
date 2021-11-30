@@ -22,8 +22,8 @@ import pyautogui
 import airsim
 
 # 1. Settings --------------------------------------------------------------------------------
-simulations = 1                                        # Number of simulations
-number_of_processors = 3                               # Number of GeneralPurposeProcessors
+simulations = 1                                      # Number of simulations
+number_of_processors = 2                               # Number of GeneralPurposeProcessors
 log_level = 4                                          # Log level of GeneralPurposeProcessors
 
 # Paths & file names
@@ -56,14 +56,22 @@ for j in range(simulations):
 
     # Run GeneralPurposeProcessor.exe
     for i in range(1, number_of_processors+1):
-        run_command_gpp = f"""start "GPP {i}" "{dir_path}\\13_GeneralPurposeProcessor.exe" /DNA:{dna_path} /L:{log_level} {i} """
+        run_command_gpp = f"""start "GPP {i}" ""D:\\projects\\DNAWindowsProcessor_withoutTensorflow\\x64\\ReleaseLight\\GeneralPurposeProcessor.exe"" /DNA:{dna_path} /L:{log_level} {i} """
         os.system(run_command_gpp)
     time.sleep(5)
+
+    # # Run GeneralPurposeProcessor.exe DEBUG Version
+    # for i in range(1, number_of_processors+1):
+    #     run_command_gpp = f"""start "GPP {i}" ""D:\\projects\\DNAWindowsProcessor_withoutTensorflow\\x64\\Debug\\GeneralPurposeProcessor.exe"" /DNA:{dna_path} /L:{log_level} {i} """
+    #     os.system(run_command_gpp)
+    # time.sleep(5)
+
 
     # Run ADNAAirSimClient.exe
     run_command_client = f"""start "ADNAforAirSim" "{dir_path}\\..\\..\\Client\\build\\x64\\Debug\\ADNAAirSimClient.exe" """
     os.system(run_command_client)
     time.sleep(3)
+
 
     # 4. ADNAAirSimClient.exe: Establish connection and start the simulation -------------------------------------------
     # Open `Control` menu and select `Connect to AirSim`
@@ -91,11 +99,9 @@ for j in range(simulations):
     # Accelerate
     print("Accelerate `Car1`...")
     car_controls.throttle = 1.0
-    car_controls.steering = 0.0
     client.setCarControls(car_controls, "Car1")
     time.sleep(5)
     car_controls.throttle = 0.7
-    car_controls.steering = 0.0
     client.setCarControls(car_controls, "Car1")
     time.sleep(5)
 
@@ -142,7 +148,7 @@ for j in range(simulations):
     car_controls.throttle = 0.0
     car_controls.brake = 1.0
     client.setCarControls(car_controls, "Car1")
-    time.sleep(15)
+    time.sleep(25)
 
     # 8. Stop simulation -----------------------------------------------------------------------------------------------
 
@@ -158,7 +164,7 @@ for j in range(simulations):
 
     # Kill all running programs
     os.system("taskkill /im ADNAAirSimClient.exe")
-    os.system("taskkill /im 13_GeneralPurposeProcessor.exe")
+    os.system("taskkill /im GeneralPurposeProcessor.exe")
     os.system("taskkill /im CityEnviron.exe")
     time.sleep(1)
 
