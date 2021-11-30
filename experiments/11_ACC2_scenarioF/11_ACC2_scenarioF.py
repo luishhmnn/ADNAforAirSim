@@ -22,7 +22,7 @@ import pyautogui
 import airsim
 
 # 1. Settings --------------------------------------------------------------------------------
-simulations = 100                                      # Number of simulations
+simulations = 1                                        # Number of simulations
 number_of_processors = 3                               # Number of GeneralPurposeProcessors
 log_level = 4                                          # Log level of GeneralPurposeProcessors
 
