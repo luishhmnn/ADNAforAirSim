@@ -173,9 +173,11 @@ static void DNAActorHandler(int resource, int dataSize, void* data)
         break;
     case DNA_CLIENT_RESOURCE_ACTOR_ACC_INDICATOR:
         theApp.SetAcc(*((float*)data));
+        theApp.m_logger.LogValue(_T("ACC"), *((float*)data));
         break;
     case DNA_CLIENT_RESOURCE_ACTOR_LCA_INDICATOR:
         theApp.SetLca(*((float*)data));
+        theApp.m_logger.LogValue(_T("LCA"), *((float*)data));
         break;
     case DNA_CLIENT_RESOURCE_ACTOR_REFERENCE_SPEED_INDICATOR:
         theApp.SetReferenceSpeedIndicator(*((float*)data));

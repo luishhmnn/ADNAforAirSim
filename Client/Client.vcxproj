@@ -228,7 +228,6 @@
     <ResourceCompile Include="Client.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
     <None Include="res\Client.rc2" />
   </ItemGroup>
   <ItemGroup>
