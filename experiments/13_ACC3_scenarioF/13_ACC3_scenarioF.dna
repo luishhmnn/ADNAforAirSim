@@ -8,7 +8,7 @@ File Format Version 1.0
 5004 = 500 (1:9021.4)             104  10                 // Sensor: ACC button
 5005 = 500 (1:9021.5 1:6005.1)    401  10                 // Sensor: speed
 
-9021 = 902 (1:6001.1 2:6002.1 3:6003.1 4:6004.1 5:999.1)          // ACC3
+9021 = 902 (1:6001.1 2:6002.1 3:6003.1 4:6004.1)          // ACC3
 
 6001 = 600                        302                     // Actuator: throttle
 6002 = 600                        303                     // Actuator: brake
@@ -19,5 +19,3 @@ File Format Version 1.0
 // DNA health check
 9981 = 998 (1:6006.1)              10                     // DNA Checker: Check DNA complete
 6006 = 600                        202                     // Actuator: Show DNA complete
-
-999 = 999
