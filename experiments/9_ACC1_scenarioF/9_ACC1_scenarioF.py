@@ -1,7 +1,7 @@
 """
 @author: Luis Hohmann
 
-This script runs scenario F of ACC2 100 times.
+This script runs scenario F of ACC1 100 times.
 
 IMPORTANT NOTES:
 - Before you start the script, make sure you start it inside its
@@ -23,7 +23,7 @@ import airsim
 
 
 # 1. Settings --------------------------------------------------------------------------------
-simulations = 1                                        # Number of simulations
+simulations = 100                                      # Number of simulations
 number_of_processors = 3                               # Number of GeneralPurposeProcessors
 log_level = 4                                          # Log level of GeneralPurposeProcessors
 
