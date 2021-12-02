@@ -2,9 +2,9 @@
   "SettingsVersion": 1.2,
   "SimMode": "Car",
   "Recording": {
-    "Enabled": false,
-    "Folder": "D:\\projects\\ADNAforAirSim\\experiments\\13_ACC3_scenarioF",
-    "RecordInterval": 0.001,
+    "Enabled": true,
+    "Folder": "D:\\projects\\ADNAforAirSim\\experiments\\14_ACC3_scenarioG",
+    "RecordInterval": 0.01,
     "RecordOnMove": false,
     "Cameras": []
   },

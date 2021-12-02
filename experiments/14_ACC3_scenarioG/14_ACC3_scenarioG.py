@@ -1,7 +1,7 @@
 """
 @author: Luis Hohmann
 
-This script runs scenario F of ACC2 100 times.
+This script runs scenario G of ACC2 100 times.
 
 IMPORTANT NOTES:
 - Before you start the script, make sure you start it inside its
@@ -20,6 +20,7 @@ import pathlib
 import pyautogui
 
 import airsim
+
 
 # 1. Settings --------------------------------------------------------------------------------
 simulations = 1                                       # Number of simulations
@@ -81,7 +82,7 @@ for j in range(simulations):
 
     # 5. Activate ACC of host vehicle ----------------------------------------------------------------------------------
     # wait until desired speed is reached
-    time.sleep(8)
+    time.sleep(10)
     # Click ACC button via shortcut
     #pyautogui.hotkey('ctrlleft', 'A')
     # FIXME: This is a temporary workaround, because `.hotkey('ctrlleft', 'A')` does not work!
@@ -99,7 +100,7 @@ for j in range(simulations):
     car_controls = airsim.CarControls()
 
     # wait until ego vehicle reaches the intersection
-    time.sleep(7)
+    time.sleep(3)
 
     # Accelerate
     print("Accelerate `Car1`...")
@@ -114,7 +115,7 @@ for j in range(simulations):
     client.setCarControls(car_controls, "Car1")
 
     # wait
-    time.sleep(12)
+    time.sleep(6)
   
     # 8. Stop simulation -----------------------------------------------------------------------------------------------
 
