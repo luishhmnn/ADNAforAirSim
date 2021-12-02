@@ -1,0 +1,1 @@
+ACC1 was not tested in scenario G because it does not support braking.
