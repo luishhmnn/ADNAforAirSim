@@ -1,0 +1,27 @@
+DNA
+File Format Version 1.0
+
+// lane keeping      
+5001 = 500 (1:8001.1)                   501 10    // Sensor: distanceLeft
+5002 = 500 (1:8001.2)                   502 10    // Sensor: distanceRight
+5003 = 500 (1:8001.3)                   503 10    // Sensor: distanceLeftFront
+5004 = 500 (1:8001.4)                   504 10    // Sensor: distanceRightFront
+5005 = 500 (1:8001.5)                   101 10    // Sensor: Steering Wheel
+5006 = 500 (1:8001.6)                   401 10    // Sensor: Car Speed
+5007 = 500 (1:8001.7)                   105 10    // Sensor: LCA Button
+8001 = 800 (1:6001.1 1:999.1 2:6002.1 3:6003.1)           // LCA3
+
+6001 = 600                              301       // Actuator: Set Steering Actuator
+6002 = 600                              201       // Actuator: Steering wheel
+6003 = 600                              205       // Actuator: LCA indicator
+
+// throttle
+8 = 70 (1:9.1)                    0.5 10    // Const: Set gas paddle position
+9 = 600                           302       // Actuator: set engine throttle
+
+// DNA health check
+10 = 998 (1:11.1)                 10        // DNA Checker: Check DNA complete
+11 = 600                          202       // Actuator:       Show DNA complete
+
+// logger
+999 = 999
