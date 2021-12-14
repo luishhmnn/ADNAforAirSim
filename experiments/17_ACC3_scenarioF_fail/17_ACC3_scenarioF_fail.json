@@ -1,7 +1,7 @@
 {
   "SettingsVersion": 1.2,
   "SimMode": "Car",
-
+  "ViewMode": "NoDisplay",
   "Recording": {
     "Enabled": true,
     "Folder": "D:\\projects\\ADNAforAirSim\\experiments\\17_ACC3_scenarioF_fail",

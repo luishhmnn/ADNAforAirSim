@@ -21,7 +21,8 @@ import pyautogui
 
 
 # 1. Settings --------------------------------------------------------------------------------
-simulations = 1                                       # Number of simulations
+simulations = 100                                      # Number of simulations
+duration = 12
 number_of_processors = 4                               # Number of GeneralPurposeProcessors
 log_level = 4                                          # Log level of GeneralPurposeProcessors
 
@@ -95,7 +96,7 @@ for j in range(simulations):
     pyautogui.keyUp('ctrl')
 
     # 7. Wait until simulation end ------------------------------------------------------------------------------------
-    time.sleep(12)
+    time.sleep(duration)
     # 8. Stop simulation -----------------------------------------------------------------------------------------------
 
     # Send AHS to sleep
@@ -110,7 +111,7 @@ for j in range(simulations):
 
     # Kill all running programs
     os.system("taskkill /im ADNAAirSimClient.exe")
-    os.system("taskkill /im 17_GeneralPurposeProcessor.exe")
+    os.system("taskkill /f /im 17_GeneralPurposeProcessor.exe")
     os.system("taskkill /im CityEnviron.exe")
     time.sleep(1)
 
