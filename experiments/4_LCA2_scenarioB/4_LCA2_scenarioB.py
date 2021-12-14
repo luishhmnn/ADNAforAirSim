@@ -21,7 +21,7 @@ import pyautogui
 
 
 # 1. Settings --------------------------------------------------------------------------------
-simulations = 1                                      # Number of simulations
+simulations = 100                                      # Number of simulations
 duration = 34                                          # Duration of simulation in sec
 number_of_processors = 3                               # Number of GeneralPurposeProcessors
 log_level = 4                                          # Log level of GeneralPurposeProcessors
@@ -56,7 +56,7 @@ for j in range(simulations):
 
     # Run GeneralPurposeProcessor.exe
     for i in range(1, number_of_processors+1):
-        run_command_gpp = f"""start "GPP {i}" "{dir_path}\\..\\..\\GeneralPurposeProcessor\\GeneralPurposeProcessor.exe" /DNA:{dna_path} /L:{log_level} {i} """
+        run_command_gpp = f"""start "GPP {i}" "{dir_path}\\4_GeneralPurposeProcessor.exe" /DNA:{dna_path} /L:{log_level} {i} """
         os.system(run_command_gpp)
     time.sleep(5)
 
@@ -94,7 +94,7 @@ for j in range(simulations):
 
     # Kill all running programs
     os.system("taskkill /im ADNAAirSimClient.exe")
-    os.system("taskkill /im GeneralPurposeProcessor.exe")
+    os.system("taskkill /im 4_GeneralPurposeProcessor.exe")
     os.system("taskkill /im CityEnviron.exe")
 
     # 7. Copy AHS logs ----------------------------------------------------------------------------
