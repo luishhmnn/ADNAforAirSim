@@ -76,39 +76,84 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;resource.h&quot;</span>       <span class="comment">// main symbols</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;AirLibWrapper.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;AirLibWrapper.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;CLogger.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// CClientApp:</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// See Client.cpp for the implementation of this class</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_c_client_app.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_client_app.html">CClientApp</a> : <span class="keyword">public</span> CWinApp</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_c_client_app.html">CClientApp</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">virtual</span> BOOL InitInstance();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> BOOL ExitInstance();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    DECLARE_MESSAGE_MAP()</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_c_air_lib_wrapper.html">CAirLibWrapper</a> m_airLibWrapper;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    afx_msg <span class="keywordtype">void</span> OnConnectAirSim();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    afx_msg <span class="keywordtype">void</span> OnDisconnectAirSim();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    afx_msg <span class="keywordtype">void</span> OnSleepAHS();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    afx_msg <span class="keywordtype">void</span> OnWakeAHS();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">float</span> GetSteering();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">float</span> GetThrottle();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">float</span> GetBrake();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> SetDNAComplete(<span class="keywordtype">float</span> value);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> SetSpeedIndicator(<span class="keywordtype">float</span> value);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_c_client_app.html">CClientApp</a> theApp;</div>
-<div class="ttc" id="aclass_c_air_lib_wrapper_html"><div class="ttname"><a href="class_c_air_lib_wrapper.html">CAirLibWrapper</a></div><div class="ttdef"><b>Definition:</b> AirLibWrapper.h:33</div></div>
-<div class="ttc" id="aclass_c_client_app_html"><div class="ttname"><a href="class_c_client_app.html">CClientApp</a></div><div class="ttdef"><b>Definition:</b> Client.h:20</div></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// ---------------------------------</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Constants</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define  ERROR_CAPTION                    &quot;Error&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define VEHICLE_PLATFORM_ID 200 </span><span class="comment">// unique processor ids in our system</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define NETWORK_ID 0 </span><span class="comment">// the network id</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define  ERROR_AHS_INIT                   &quot;Cannot init the AHS, errorcode %x&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define HORMONE_LOOP_PERIOD 10 </span><span class="comment">// hormone loop period in milliseconds</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// DNA sensor resources of the client</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define DNA_CLIENT_RESOURCE_SENSOR_STEERING                 101</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define DNA_CLIENT_RESOURCE_SENSOR_THROTTLE                 102</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define DNA_CLIENT_RESOURCE_SENSOR_BRAKE                    103</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define DNA_CLIENT_RESOURCE_SENSOR_ACC                      104</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define DNA_CLIENT_RESOURCE_SENSOR_LCA                      105</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// DNA actor resources of the client</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define DNA_CLIENT_RESOURCE_ACTOR_STEERING                  201</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define DNA_CLIENT_RESOURCE_ACTOR_DNACOMPLETE               202</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define DNA_CLIENT_RESOURCE_ACTOR_SPEED_INDICATOR           203</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define DNA_CLIENT_RESOURCE_ACTOR_ACC_INDICATOR             204</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define DNA_CLIENT_RESOURCE_ACTOR_LCA_INDICATOR             205</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define DNA_CLIENT_RESOURCE_ACTOR_REFERENCE_SPEED_INDICATOR 206</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// DNA actor resources of the server (car)</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define DNA_CAR_RESOURCE_ACTOR_STEERING                     301</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define DNA_CAR_RESOURCE_ACTOR_THROTTLE                     302          </span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define DNA_CAR_RESOURCE_ACTOR_BRAKE                        303</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// DNA sensor resources of the server (car)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// Car state</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define DNA_CAR_RESOURCE_SENSOR_SPEED                       401</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// CClientApp:</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// See Client.cpp for the implementation of this class</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_c_client_app.html">   53</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_client_app.html">CClientApp</a> : <span class="keyword">public</span> CWinApp</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="class_c_client_app.html">CClientApp</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">virtual</span> BOOL InitInstance();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">virtual</span> BOOL ExitInstance();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    HACCEL m_hAccelTable;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    DECLARE_MESSAGE_MAP()</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">virtual</span> BOOL ProcessMessageFilter(<span class="keywordtype">int</span> code, LPMSG lpMsg);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="class_c_air_lib_wrapper.html">CAirLibWrapper</a> m_airLibWrapper;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_c_logger.html">CLogger</a> m_logger;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    afx_msg <span class="keywordtype">void</span> OnConnectAirSim();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    afx_msg <span class="keywordtype">void</span> OnDisconnectAirSim();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    afx_msg <span class="keywordtype">void</span> OnSleepAHS();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    afx_msg <span class="keywordtype">void</span> OnWakeAHS();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">float</span> GetSteering();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">float</span> GetThrottle();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">float</span> GetBrake();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">float</span> GetAcc();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">float</span> GetLca();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> SetSteering(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> SetDnaIndicator(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> SetSpeedIndicator(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> SetReferenceSpeedIndicator(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> SetAcc(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> SetLca(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_c_client_app.html">CClientApp</a> theApp;</div>
+<div class="ttc" id="aclass_c_air_lib_wrapper_html"><div class="ttname"><a href="class_c_air_lib_wrapper.html">CAirLibWrapper</a></div><div class="ttdef"><b>Definition:</b> AirLibWrapper.h:31</div></div>
+<div class="ttc" id="aclass_c_client_app_html"><div class="ttname"><a href="class_c_client_app.html">CClientApp</a></div><div class="ttdef"><b>Definition:</b> Client.h:54</div></div>
+<div class="ttc" id="aclass_c_logger_html"><div class="ttname"><a href="class_c_logger.html">CLogger</a></div><div class="ttdef"><b>Definition:</b> CLogger.h:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

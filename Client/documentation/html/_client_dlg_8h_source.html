@@ -104,32 +104,73 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    CSliderCtrl m_sliderSteering;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> m_sliderSteeringVal;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">float</span> GetSteering();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Throttle slider</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    CSliderCtrl m_sliderThrottle;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> m_sliderThrottleVal;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">float</span> GetThrottle();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Brake slider</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    CSliderCtrl m_sliderBrake;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span> m_sliderBrakeVal;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">float</span> GetBrake();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// DNA checker icon</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_c_color_static.html">CColorStatic</a> m_staticDNA;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Speed indicator</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    CStatic m_staticSpeed;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> SetSpeedIndicator(<span class="keywordtype">float</span> value);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    afx_msg <span class="keywordtype">void</span> OnAppAbout();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> SetDNAComplete(<span class="keywordtype">float</span> value);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// ACC button</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    CButton m_btnACC;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// LKA button</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    CButton m_btnLKA;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> SetSteering(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// Throttle slider</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    CSliderCtrl m_sliderThrottle;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> m_sliderThrottleVal;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">float</span> GetThrottle();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Brake slider</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    CSliderCtrl m_sliderBrake;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">int</span> m_sliderBrakeVal;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">float</span> GetBrake();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_client_dlg.html#a1464879bd7fb746513019b4dab33f856">SetDnaIndicator</a>(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// DNA checker icon</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="class_c_color_static.html">CColorStatic</a> m_staticDNA;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    BOOL m_DNAactive;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// Speed indicator</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    CStatic m_staticSpeed;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> SetSpeedIndicator(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Reference speed indicator</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    CStatic m_staticReferenceSpeed;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> SetReferenceSpeedIndicator(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// ACC button</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_c_client_dlg.html#a89ba82224b0c6f65b27a5df37de856f0">   68</a></span>&#160;    CButton <a class="code" href="class_c_client_dlg.html#a89ba82224b0c6f65b27a5df37de856f0">m_btnACC</a>;                </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_c_client_dlg.html#ab960beb26d7a7ed676b5b931cd930a04">   69</a></span>&#160;    BOOL <a class="code" href="class_c_client_dlg.html#ab960beb26d7a7ed676b5b931cd930a04">m_ACCactive</a>;                </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_c_client_dlg.html#a09310fdc52c75da4675bc06e50dc5824">   70</a></span>&#160;    BOOL <a class="code" href="class_c_client_dlg.html#a09310fdc52c75da4675bc06e50dc5824">m_ACCactivate</a>;              </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_c_client_dlg.html#abe8d2d8d4872ac4aa28429f51c5ff5bc">   71</a></span>&#160;    time_t <a class="code" href="class_c_client_dlg.html#abe8d2d8d4872ac4aa28429f51c5ff5bc">m_ACCactivateTimestamp</a>;   </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_c_client_dlg.html#a7503f443bb589003ec2f1a50552dbeaa">GetAcc</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_client_dlg.html#ac07e1640a1d86d5194b31b3fe5b05d77">SetAcc</a>(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_client_dlg.html#aad73a71d05588dcca09a1e5cfdd8fdb2">OnBnClickedButtonAcc</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// LCA Button</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_c_client_dlg.html#a782872f030804daa37bb189aa9328b40">   97</a></span>&#160;    CButton <a class="code" href="class_c_client_dlg.html#a782872f030804daa37bb189aa9328b40">m_btnLCA</a>;                </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_c_client_dlg.html#aa59b0c097a0d608ea1c048eafac90ed7">   98</a></span>&#160;    BOOL <a class="code" href="class_c_client_dlg.html#aa59b0c097a0d608ea1c048eafac90ed7">m_LCAactive</a>;                </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_c_client_dlg.html#a8ba75b641b453581a684fcb976f4000b">   99</a></span>&#160;    BOOL <a class="code" href="class_c_client_dlg.html#a8ba75b641b453581a684fcb976f4000b">m_LCAactivate</a>;              </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="class_c_client_dlg.html#ae457373e21108467bd460140224a8a75">  100</a></span>&#160;    time_t <a class="code" href="class_c_client_dlg.html#ae457373e21108467bd460140224a8a75">m_LCAactivateTimestamp</a>;   </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_c_client_dlg.html#ad0fa4f1d603221cce82262c1c1e384a5">GetLca</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_client_dlg.html#ace4889c44627ad8ab9f691487af3907b">SetLca</a>(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_client_dlg.html#a4116b387b07f63a6517cd49627ebd05a">OnBnClickedButtonLca</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// About modal</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment"></span>    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_client_dlg.html#a17be2af7ff1edaf0845249c775e2972f">OnAppAbout</a>();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;};</div>
 <div class="ttc" id="aclass_c_client_dlg_html"><div class="ttname"><a href="class_c_client_dlg.html">CClientDlg</a></div><div class="ttdef"><b>Definition:</b> ClientDlg.h:11</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_a09310fdc52c75da4675bc06e50dc5824"><div class="ttname"><a href="class_c_client_dlg.html#a09310fdc52c75da4675bc06e50dc5824">CClientDlg::m_ACCactivate</a></div><div class="ttdeci">BOOL m_ACCactivate</div><div class="ttdoc">Status of the ACC button/ Users activation request.</div><div class="ttdef"><b>Definition:</b> ClientDlg.h:70</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_a1464879bd7fb746513019b4dab33f856"><div class="ttname"><a href="class_c_client_dlg.html#a1464879bd7fb746513019b4dab33f856">CClientDlg::SetDnaIndicator</a></div><div class="ttdeci">void SetDnaIndicator(float value)</div><div class="ttdoc">Sets the value of the DNA indicator.</div><div class="ttdef"><b>Definition:</b> ClientDlg.cpp:273</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_a17be2af7ff1edaf0845249c775e2972f"><div class="ttname"><a href="class_c_client_dlg.html#a17be2af7ff1edaf0845249c775e2972f">CClientDlg::OnAppAbout</a></div><div class="ttdeci">afx_msg void OnAppAbout()</div><div class="ttdoc">Shows a modal with information about the application.</div><div class="ttdef"><b>Definition:</b> ClientDlg.cpp:265</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_a4116b387b07f63a6517cd49627ebd05a"><div class="ttname"><a href="class_c_client_dlg.html#a4116b387b07f63a6517cd49627ebd05a">CClientDlg::OnBnClickedButtonLca</a></div><div class="ttdeci">afx_msg void OnBnClickedButtonLca()</div><div class="ttdoc">Inverts the status of the LCA switch (m_LCAactivate).</div><div class="ttdef"><b>Definition:</b> ClientDlg.cpp:383</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_a7503f443bb589003ec2f1a50552dbeaa"><div class="ttname"><a href="class_c_client_dlg.html#a7503f443bb589003ec2f1a50552dbeaa">CClientDlg::GetAcc</a></div><div class="ttdeci">float GetAcc()</div><div class="ttdoc">Returns the status of the ACC button.</div><div class="ttdef"><b>Definition:</b> ClientDlg.cpp:245</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_a782872f030804daa37bb189aa9328b40"><div class="ttname"><a href="class_c_client_dlg.html#a782872f030804daa37bb189aa9328b40">CClientDlg::m_btnLCA</a></div><div class="ttdeci">CButton m_btnLCA</div><div class="ttdoc">LCA button which works as a switch.</div><div class="ttdef"><b>Definition:</b> ClientDlg.h:97</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_a89ba82224b0c6f65b27a5df37de856f0"><div class="ttname"><a href="class_c_client_dlg.html#a89ba82224b0c6f65b27a5df37de856f0">CClientDlg::m_btnACC</a></div><div class="ttdeci">CButton m_btnACC</div><div class="ttdoc">ACC button which works as a switch.</div><div class="ttdef"><b>Definition:</b> ClientDlg.h:68</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_a8ba75b641b453581a684fcb976f4000b"><div class="ttname"><a href="class_c_client_dlg.html#a8ba75b641b453581a684fcb976f4000b">CClientDlg::m_LCAactivate</a></div><div class="ttdeci">BOOL m_LCAactivate</div><div class="ttdoc">Status of the LCA button/ Users activation request.</div><div class="ttdef"><b>Definition:</b> ClientDlg.h:99</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_aa59b0c097a0d608ea1c048eafac90ed7"><div class="ttname"><a href="class_c_client_dlg.html#aa59b0c097a0d608ea1c048eafac90ed7">CClientDlg::m_LCAactive</a></div><div class="ttdeci">BOOL m_LCAactive</div><div class="ttdoc">Status of the LCA button's icon (dark/bright).</div><div class="ttdef"><b>Definition:</b> ClientDlg.h:98</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_aad73a71d05588dcca09a1e5cfdd8fdb2"><div class="ttname"><a href="class_c_client_dlg.html#aad73a71d05588dcca09a1e5cfdd8fdb2">CClientDlg::OnBnClickedButtonAcc</a></div><div class="ttdeci">afx_msg void OnBnClickedButtonAcc()</div><div class="ttdoc">Inverts the status of the LCA switch (m_LCAactivate).</div><div class="ttdef"><b>Definition:</b> ClientDlg.cpp:374</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_ab960beb26d7a7ed676b5b931cd930a04"><div class="ttname"><a href="class_c_client_dlg.html#ab960beb26d7a7ed676b5b931cd930a04">CClientDlg::m_ACCactive</a></div><div class="ttdeci">BOOL m_ACCactive</div><div class="ttdoc">Status of the ACC button's icon (bright/dark).</div><div class="ttdef"><b>Definition:</b> ClientDlg.h:69</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_abe8d2d8d4872ac4aa28429f51c5ff5bc"><div class="ttname"><a href="class_c_client_dlg.html#abe8d2d8d4872ac4aa28429f51c5ff5bc">CClientDlg::m_ACCactivateTimestamp</a></div><div class="ttdeci">time_t m_ACCactivateTimestamp</div><div class="ttdoc">Timestamp in s when LCA button was clicked.</div><div class="ttdef"><b>Definition:</b> ClientDlg.h:71</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_ac07e1640a1d86d5194b31b3fe5b05d77"><div class="ttname"><a href="class_c_client_dlg.html#ac07e1640a1d86d5194b31b3fe5b05d77">CClientDlg::SetAcc</a></div><div class="ttdeci">void SetAcc(float value)</div><div class="ttdoc">Sets the icon of the button to bright or dark.</div><div class="ttdef"><b>Definition:</b> ClientDlg.cpp:322</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_ace4889c44627ad8ab9f691487af3907b"><div class="ttname"><a href="class_c_client_dlg.html#ace4889c44627ad8ab9f691487af3907b">CClientDlg::SetLca</a></div><div class="ttdeci">void SetLca(float value)</div><div class="ttdoc">Sets the icon of the button to bright or dark.</div><div class="ttdef"><b>Definition:</b> ClientDlg.cpp:348</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_ad0fa4f1d603221cce82262c1c1e384a5"><div class="ttname"><a href="class_c_client_dlg.html#ad0fa4f1d603221cce82262c1c1e384a5">CClientDlg::GetLca</a></div><div class="ttdeci">float GetLca()</div><div class="ttdoc">Returns the status of the LCA button.</div><div class="ttdef"><b>Definition:</b> ClientDlg.cpp:255</div></div>
+<div class="ttc" id="aclass_c_client_dlg_html_ae457373e21108467bd460140224a8a75"><div class="ttname"><a href="class_c_client_dlg.html#ae457373e21108467bd460140224a8a75">CClientDlg::m_LCAactivateTimestamp</a></div><div class="ttdeci">time_t m_LCAactivateTimestamp</div><div class="ttdoc">Timestamp in s when LCA button was clicked.</div><div class="ttdef"><b>Definition:</b> ClientDlg.h:100</div></div>
 <div class="ttc" id="aclass_c_color_static_html"><div class="ttname"><a href="class_c_color_static.html">CColorStatic</a></div><div class="ttdoc">CStatic with ability to change the color of the text.</div><div class="ttdef"><b>Definition:</b> CColorStatic.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

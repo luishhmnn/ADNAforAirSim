@@ -84,6 +84,9 @@ virtual BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>InitInstance<
 <tr class="memitem:a5c90892d760d0f4d0c64d667b5ea4086"><td class="memItemLeft" align="right" valign="top"><a id="a5c90892d760d0f4d0c64d667b5ea4086"></a>
 virtual BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>ExitInstance</b> ()</td></tr>
 <tr class="separator:a5c90892d760d0f4d0c64d667b5ea4086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4392a2324f46ebb5c4bad54e3fc639df"><td class="memItemLeft" align="right" valign="top"><a id="a4392a2324f46ebb5c4bad54e3fc639df"></a>
+virtual BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>ProcessMessageFilter</b> (int code, LPMSG lpMsg)</td></tr>
+<tr class="separator:a4392a2324f46ebb5c4bad54e3fc639df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a889af93e9825164f800fb2a5b82b27e3"><td class="memItemLeft" align="right" valign="top"><a id="a889af93e9825164f800fb2a5b82b27e3"></a>
 afx_msg void&#160;</td><td class="memItemRight" valign="bottom"><b>OnConnectAirSim</b> ()</td></tr>
 <tr class="separator:a889af93e9825164f800fb2a5b82b27e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -105,18 +108,42 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>GetThrottle</b> ()</
 <tr class="memitem:afb40e44262e9d7988ae759d6b3ebaa9d"><td class="memItemLeft" align="right" valign="top"><a id="afb40e44262e9d7988ae759d6b3ebaa9d"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>GetBrake</b> ()</td></tr>
 <tr class="separator:afb40e44262e9d7988ae759d6b3ebaa9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae282416a454a12b6e760248d02405ac7"><td class="memItemLeft" align="right" valign="top"><a id="ae282416a454a12b6e760248d02405ac7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetDNAComplete</b> (float value)</td></tr>
-<tr class="separator:ae282416a454a12b6e760248d02405ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f3be521d10d384013d62a60768e47cf"><td class="memItemLeft" align="right" valign="top"><a id="a7f3be521d10d384013d62a60768e47cf"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>GetAcc</b> ()</td></tr>
+<tr class="separator:a7f3be521d10d384013d62a60768e47cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e8db0f9066673768f96850b0a4b55c0"><td class="memItemLeft" align="right" valign="top"><a id="a0e8db0f9066673768f96850b0a4b55c0"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>GetLca</b> ()</td></tr>
+<tr class="separator:a0e8db0f9066673768f96850b0a4b55c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c437d8f98a5679eeb39e2c4073a0d25"><td class="memItemLeft" align="right" valign="top"><a id="a7c437d8f98a5679eeb39e2c4073a0d25"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetSteering</b> (float value)</td></tr>
+<tr class="separator:a7c437d8f98a5679eeb39e2c4073a0d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88f87638d0b6030e69fd1e8c44acd185"><td class="memItemLeft" align="right" valign="top"><a id="a88f87638d0b6030e69fd1e8c44acd185"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetDnaIndicator</b> (float value)</td></tr>
+<tr class="separator:a88f87638d0b6030e69fd1e8c44acd185"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7490d025ea06f9f4d8b33ad84db5c925"><td class="memItemLeft" align="right" valign="top"><a id="a7490d025ea06f9f4d8b33ad84db5c925"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetSpeedIndicator</b> (float value)</td></tr>
 <tr class="separator:a7490d025ea06f9f4d8b33ad84db5c925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d52db547d7c180acebd1c935c6d037b"><td class="memItemLeft" align="right" valign="top"><a id="a8d52db547d7c180acebd1c935c6d037b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetReferenceSpeedIndicator</b> (float value)</td></tr>
+<tr class="separator:a8d52db547d7c180acebd1c935c6d037b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca3c87958805a3f5adcd55ac1e538e62"><td class="memItemLeft" align="right" valign="top"><a id="aca3c87958805a3f5adcd55ac1e538e62"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetAcc</b> (float value)</td></tr>
+<tr class="separator:aca3c87958805a3f5adcd55ac1e538e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3773a7b3703e55fb63f7c79484cce31e"><td class="memItemLeft" align="right" valign="top"><a id="a3773a7b3703e55fb63f7c79484cce31e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetLca</b> (float value)</td></tr>
+<tr class="separator:a3773a7b3703e55fb63f7c79484cce31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a9db18fd3889019309f23b864fd082eb6"><td class="memItemLeft" align="right" valign="top"><a id="a9db18fd3889019309f23b864fd082eb6"></a>
+HACCEL&#160;</td><td class="memItemRight" valign="bottom"><b>m_hAccelTable</b></td></tr>
+<tr class="separator:a9db18fd3889019309f23b864fd082eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bf76b4cbed74242edd35fa985209e24"><td class="memItemLeft" align="right" valign="top"><a id="a8bf76b4cbed74242edd35fa985209e24"></a>
 <a class="el" href="class_c_air_lib_wrapper.html">CAirLibWrapper</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_airLibWrapper</b></td></tr>
 <tr class="separator:a8bf76b4cbed74242edd35fa985209e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c719d41f3ea841c951bcda960c357f"><td class="memItemLeft" align="right" valign="top"><a id="ac8c719d41f3ea841c951bcda960c357f"></a>
+<a class="el" href="class_c_logger.html">CLogger</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_logger</b></td></tr>
+<tr class="separator:ac8c719d41f3ea841c951bcda960c357f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_client_8h_source.html">Client.h</a></li>
