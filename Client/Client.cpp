@@ -170,7 +170,7 @@ END_MESSAGE_MAP()
 // CClientApp construction
 CClientApp::CClientApp()
 {
-    // TODO: add construction code here,
+    // add construction code here,
     // Place all significant initialization in InitInstance
 }
 
