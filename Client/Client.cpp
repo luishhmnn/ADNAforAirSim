@@ -21,11 +21,16 @@ extern "C" {
 #endif
 
 // -------------------------------------------------------------------------------------------------
-// TODO: evtl auch auslagern
-// Find the first digit
+/**
+ * Helper function which returns the first digit of an integer.
+ * 
+ * @brief Returns first digit.
+ * @param n The number.
+ * @return Number's first digit.
+*/
 int firstDigit(int n)
 {
-    // Remove last digit from number
+    // Remove last digits from number
     // till only one digit is left
     while (n >= 10)
         n /= 10;
@@ -37,8 +42,6 @@ int firstDigit(int n)
 
 
 // -------------------------------------------------------------------------------------------------
-// TODO: auslagern in andere Datei
-
 /**
  * Sensor handler function for the DNA sensor class. Delivers the requested sensor data from the
  * simulator to the sensor class instance.
@@ -51,9 +54,6 @@ int firstDigit(int n)
 */
 static int DNASensorHandler(int resource, int dataSize, void* data)
 {
-
-    // TODO: First, check if the connection to AirSim is established correctly.
-
     float res = 0.0f;
 
     // Client side sensors.
@@ -87,45 +87,12 @@ static int DNASensorHandler(int resource, int dataSize, void* data)
         resourceName.Format(_T("distance %d"), resource);
         theApp.m_logger.LogValue(resourceName, res);
     }
-    // TODO: Add other sensor types here.
+
+    // Add other sensor types here.
 
     else {
         OutputDebugStringA("Warning: A sensor task tries to access a resource whose ID is not known to the client.\n");
     }
-
-    //switch (resource)
-    //{
-    //case DNA_CLIENT_RESOURCE_SENSOR_STEERING:
-    //    res = theApp.GetSteering();
-    //    break;
-    //case DNA_CLIENT_RESOURCE_SENSOR_THROTTLE:
-    //    res = theApp.GetThrottle();
-    //    break;
-    //case DNA_CLIENT_RESOURCE_SENSOR_BRAKE:
-    //    res = theApp.GetBrake();
-    //    break;
-    //case DNA_CLIENT_RESOURCE_SENSOR_ACC:
-    //    res = theApp.GetAcc();
-    //    break;
-    //case DNA_CLIENT_RESOURCE_SENSOR_LCA:
-    //    res = theApp.GetLca();
-    //    break;
-    //case DNA_CAR_RESOURCE_SENSOR_DISTANCE_LEFT_CURB:
-    //    res = theApp.m_airLibWrapper.GetDistanceSensorData(DNA_CAR_RESOURCE_SENSOR_DISTANCE_LEFT_CURB);
-    //    theApp.m_logger.LogValue(_T("distanceSensorLeftCurb"), res);
-    //    break;
-    //case DNA_CAR_RESOURCE_SENSOR_DISTANCE_RIGHT_CURB:
-    //    res = theApp.m_airLibWrapper.GetDistanceSensorData(DNA_CAR_RESOURCE_SENSOR_DISTANCE_RIGHT_CURB);
-    //    theApp.m_logger.LogValue(_T("distanceSensorRightCurb"), res);
-    //    break;
-    //case DNA_CAR_RESOURCE_SENSOR_SPEED:
-    //    res = theApp.m_airLibWrapper.GetSpeed();
-    //    break;
-    //default:
-    //    // TODO: Raise error or print to log file
-    //    OutputDebugStringA("Warning: A sensor task tries to access a resource whose ID is not known to the client.\n");
-    //    break;
-    //}
 
     // deliver result
     *((float*)data) = res;
@@ -183,12 +150,10 @@ static void DNAActorHandler(int resource, int dataSize, void* data)
         theApp.SetReferenceSpeedIndicator(*((float*)data));
         break;
     default:
-        // TODO: Raise error or print to log file
         OutputDebugStringA("Warning: An actor task tries to access a resource whose ID is not known to the client.\n");
         break;
     }
 }
-
 // -------------------------------------------------------------------------------------------------
 
 // CClientApp
@@ -233,14 +198,8 @@ BOOL CClientApp::InitInstance()
 
     hormoneLoopPeriod = HORMONE_LOOP_PERIOD;
 
-
-
-    // TODO: init of the AHS (correct error msg)
     /* init the AHS */
     if (!AHSInit(VEHICLE_PLATFORM_ID, (AHSNetworkId)NETWORK_ID)) {
-        //sprintf(outString, ERROR_AHS_INIT, (int)AHSGetLastError());
-        // TODO: Fix this. 'dlg.MessageBox' will not work.
-        //dlg.MessageBox(_T("ERROR"), _T(ERROR_CAPTION), MB_OK);
         OutputDebugStringA("Error: init of the AHS");
         return FALSE;
     }
@@ -248,15 +207,11 @@ BOOL CClientApp::InitInstance()
     // disable hormone loop period checks
     AHSDisableHormoneLoopPeriodCheck(1);
 
-
     /* set the hormone loop period */
     if (!AHSSetHormoneLoopPeriod(hormoneLoopPeriod)) {
-        //sprintf(outString, ERROR_AHS_INIT, (int)AHSGetLastError());
-        //m_pMainWnd->MessageBox(outString, ERROR_CAPTION, MB_ICONEXCLAMATION | MB_OK);
         OutputDebugStringA("Error: hormone loop period");
         return FALSE;
     }
-
 
     /* select accelerator threshold */
     AHSEnableAcceleratorThreshold(1);
@@ -266,15 +221,12 @@ BOOL CClientApp::InitInstance()
     DNASetApplicationSimulatorActorHandler(DNAActorHandler);
 
     /* start sensor actor simulator interface */
-    if (!DNAStartSensorActorSimulatorInterface()) {
-        //sprintf(outString, ERROR_AHS_ADDTASK, (int)AHSGetLastError());
-        //m_pMainWnd->MessageBox(outString, ERROR_CAPTION, MB_ICONEXCLAMATION | MB_OK);
-        
+    if (!DNAStartSensorActorSimulatorInterface()) {       
         OutputDebugStringA("Error: sensor actor simulator interface");
         return FALSE;
     }
     /* request high timer resolution */
-    // TODO: timeBeginPeriod();
+    // TODO: Check if `timeBeginPeriod();` is needed.
     //timeBeginPeriod(1);
 
     //-----------------------------------------------------------------------
@@ -310,11 +262,11 @@ BOOL CClientApp::ExitInstance()
     /* close the AHS */
     AHSClose();
 
-    // TODO: timeEndPeriod()
+    // TODO: Check if `timeEndPeriod(1);` is needed.
     /* unrequest high timer resolution */
     //timeEndPeriod(1);
 
-    // TODO: delete the mutex
+    // TODO: Delete the mutex.
     // delete the mutex
     // if (m_mutex != NULL) AHSDestroyMutex(m_mutex);
 
@@ -373,40 +325,32 @@ void CClientApp::OnDisconnectAirSim()
 }
 
 
-
 void CClientApp::OnWakeAHS()
 {
-    // TODO: Add your command handler code here
     AHSWakeup();
 }
 
 
 void CClientApp::OnSleepAHS()
 {
-    // TODO: Add your command handler code here
     AHSSendToSleep();
 }
 
 
-
-
 float CClientApp::GetSteering()
 {
-    /* do it */
     return ((CClientDlg*)m_pMainWnd)->GetSteering();
 }
 
 
 float CClientApp::GetThrottle()
 {
-    /* do it */
     return ((CClientDlg*)m_pMainWnd)->GetThrottle();
 }
 
 
 float CClientApp::GetBrake()
 {
-    /* do it */
     return ((CClientDlg*)m_pMainWnd)->GetBrake();
 }
 
@@ -425,7 +369,6 @@ float CClientApp::GetLca()
 
 void CClientApp::SetSteering(float value)
 {
-    /* do it */
     ((CClientDlg*)m_pMainWnd)->SetSteering(value);
 }
 

@@ -17,9 +17,7 @@ extern "C" {
 #include <AHSUtilities.h>
 }
 
-
 // AirSim server constants
-// TODO: Decide: #define vs const
 #define IP_ADRESS    "localhost"
 #define PORT         41451
 #define TIMEOUT_SEC  60.0f
