@@ -1,1 +1,0 @@
-start "" "CityEnviron\WindowsNoEditor\CityEnviron.exe" --settings "%~dp0Settings\settings_simpleLKA.json"
