@@ -14,12 +14,11 @@
 
 // ---------------------------------
 // Constants
-
-#define  ERROR_CAPTION                    "Error"
 #define VEHICLE_PLATFORM_ID 200 // unique processor ids in our system
-#define NETWORK_ID 0 // the network id
-#define  ERROR_AHS_INIT                   "Cannot init the AHS, errorcode %x"
+#define NETWORK_ID          0   // the network id
 #define HORMONE_LOOP_PERIOD 100 // hormone loop period in milliseconds
+#define ERROR_CAPTION       "Error"
+#define ERROR_AHS_INIT      "Cannot init the AHS, errorcode %x"
 
 // DNA sensor resources of the client
 #define DNA_CLIENT_RESOURCE_SENSOR_STEERING					101
@@ -42,9 +41,14 @@
 #define DNA_CAR_RESOURCE_ACTOR_BRAKE						303
 
 // DNA sensor resources of the server (car)
-// Car state
 #define DNA_CAR_RESOURCE_SENSOR_SPEED						401
-
+// NOTE: The other server sensor IDs are not hard-coded and 
+//       can be freely defined. The only requirement is that 
+//       they must be integers and follow this scheme:
+//       - Distance sensors: Leading 5
+//                           example: `501`
+// 
+//       - other sensors: to be defined...
 
 // CClientApp:
 // See Client.cpp for the implementation of this class
