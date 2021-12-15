@@ -19,7 +19,7 @@
 #define VEHICLE_PLATFORM_ID 200 // unique processor ids in our system
 #define NETWORK_ID 0 // the network id
 #define  ERROR_AHS_INIT                   "Cannot init the AHS, errorcode %x"
-#define HORMONE_LOOP_PERIOD 10 // hormone loop period in milliseconds
+#define HORMONE_LOOP_PERIOD 100 // hormone loop period in milliseconds
 
 // DNA sensor resources of the client
 #define DNA_CLIENT_RESOURCE_SENSOR_STEERING					101
