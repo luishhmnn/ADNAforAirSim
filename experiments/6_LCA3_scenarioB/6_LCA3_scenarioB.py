@@ -21,7 +21,7 @@ import pyautogui
 
 
 # 1. Settings --------------------------------------------------------------------------------
-simulations = 1                                      # Number of simulations
+simulations = 100                                      # Number of simulations
 duration = 34                                          # Duration of simulation in sec
 number_of_processors = 3                               # Number of GeneralPurposeProcessors
 log_level = 4                                          # Log level of GeneralPurposeProcessors
