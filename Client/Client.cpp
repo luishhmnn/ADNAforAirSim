@@ -102,10 +102,10 @@ static int DNASensorHandler(int resource, int dataSize, void* data)
 
 
 /**
- * Actor handler function for the DNA sensor class. Gets the actor data from the
+ * Actor handler function for the DNA sensor class. Delivers the actor data from the
  * vehicle to the actor class instance.
  *
- * @brief Actor handler function for the DNA sensor class.
+ * @brief Actor handler function for the DNA actor class.
  * @param resource ID of the resource.
  * @param dataSize Size of the data.
  * @param data Pointer to the location of the data.
