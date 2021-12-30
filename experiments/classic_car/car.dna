@@ -1,0 +1,10 @@
+DNA
+File Format Version 1.0
+
+5001 = 500 (1:6001.1)   101 100  // Sensor Interface: Steering
+5002 = 500 (1:6002.1)   102 100  // Sensor Interface: Gas Pedal
+5003 = 500 (1:6003.1)   103 100  // Sensor Interface: Brake Pedal
+
+6001 = 600              301      // Actuator Interface: Steering
+6002 = 600              302      // Actuator Interface: Throttle
+6003 = 600              303      // Actuator Interface: Brake

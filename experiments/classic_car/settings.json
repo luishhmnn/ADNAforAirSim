@@ -1,0 +1,13 @@
+{
+  "SettingsVersion": 1.2,
+  "SimMode": "Car",
+  "Vehicles": {
+    "Car": {
+      "VehicleType": "PhysXCar",
+      "AutoCreate": true
+    }
+  }
+}
+
+
+
