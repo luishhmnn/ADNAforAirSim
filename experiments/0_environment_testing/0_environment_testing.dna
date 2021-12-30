@@ -6,7 +6,7 @@ File Format Version 1.0
 2 = 600                           301       // Actuator:  Set Steering Actuator
 
 // throttle
-3 = 70 (1:4.1)                    1 10    // Const:      Set gas paddle position
+3 = 70 (1:4.1)                    1 10    // Const:      Set gas pedal position
 4 = 600                           302       // Actuator:  set engine throttle
 
 // DNA health check
