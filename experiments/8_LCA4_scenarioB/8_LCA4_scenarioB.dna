@@ -11,7 +11,7 @@ File Format Version 1.0
 6003 = 600                                       205       // Actuator: LCA indicator
 
 // throttle
-0701 = 70 (1:6004.1)                             0.5 100   // Const:      Set gas paddle position
+0701 = 70 (1:6004.1)                             0.5 100   // Const:      Set gas ppedal position
 6004 = 600                                       302       // Actuator:  set engine throttle
 
 // -- DNA health check --------------------------------------------------------------------------------------

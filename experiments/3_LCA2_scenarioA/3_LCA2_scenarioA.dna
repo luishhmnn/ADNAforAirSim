@@ -26,7 +26,7 @@ File Format Version 1.0
 6003 = 600                               301                   // Actuator: Steering Actuator
 
 // -- throttle ----------------------------------------------------------------------------------------------
-0702 = 70 (1:6005.1)                     0.5  10               // Const: Constant gas paddle position
+0702 = 70 (1:6005.1)                     0.5  10               // Const: Constant gas pedal position
 6005 = 600                               302                   // Actuator: Engine throttle
 
 // -- DNA health check --------------------------------------------------------------------------------------
