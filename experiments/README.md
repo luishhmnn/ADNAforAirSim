@@ -10,6 +10,6 @@ To run an experiment one time:
 
 
 Notes:
-- Before you can run a simulation make sure that you installed AirSim to `ADNAforAirSim\AirSimServer\CityEnviron`. If you have not installed it yet, go to this directory. There you will find installation instructions.
+- Before you can run a simulation you must install AirSim to `ADNAforAirSim\AirSimServer\CityEnviron`. If you have not installed it yet, go to this directory. There you will find installation instructions.
 - Unfortunately, AirSim's settings.json does not allow relative paths. Please change the path in settings.json to fit your system.
 - To run multiple simulations automated you can use the Python scripts.
